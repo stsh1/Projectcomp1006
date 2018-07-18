@@ -1,10 +1,10 @@
 <?php
 
-$databaseHost = 'tcp:servercomp1006.database.windows.net,1433';
+$databaseHost = 'tcp:serverdbcomp1006.database.windows.net,1433';
 $databaseName = 'Projectcomp1006';
 $databaseUsername = 'admincomp1006';
 $databasePassword = 'anjana@123';
-
+// PHP Data Objects(PDO) Sample Code:
 try {
 	// http://php.net/manual/en/pdo.connections.php
 	$dbConn = new PDO("mysql:host={$databaseHost};dbname={$databaseName}", $databaseUsername, $databasePassword);
