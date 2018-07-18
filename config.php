@@ -1,9 +1,9 @@
 <?php
 
-$databaseHost = 'localhost';
-$databaseName = 'test';
-$databaseUsername = 'root';
-$databasePassword = 'root';
+$databaseHost = 'tcp:servercomp1006.database.windows.net,1433';
+$databaseName = 'Projectcomp1006';
+$databaseUsername = 'admincomp1006';
+$databasePassword = 'anjana@123';
 
 try {
 	// http://php.net/manual/en/pdo.connections.php
