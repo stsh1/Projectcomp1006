@@ -1,6 +1,6 @@
 <?php
 
-$databaseHost = 'tcp:serverdbcomp.database.windows.net,1433';
+$databaseHost = 'tcp:serverdbcomp.database.windows.net';
 $databaseName = 'projectcomp1006';
 $databaseUsername = 'admincomp1006';
 $databasePassword = 'anjana@123';
