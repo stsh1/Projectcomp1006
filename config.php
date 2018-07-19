@@ -1,8 +1,8 @@
 <?php
 
-$databaseHost = 'tcp:serverdbcomp.database.windows.net';
-$databaseName = 'projectcomp1006';
-$databaseUsername = 'admincomp1006';
+$databaseHost = 'tcp:projects1006server.database.windows.net';
+$databaseName = 'Projectdb';
+$databaseUsername = 'Project1006';
 $databasePassword = 'anjana@123';
 
 // PHP Data Objects(PDO) Sample Code:
