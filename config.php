@@ -1,19 +1,18 @@
 <?php
 
-$databaseHost = 'tcp:projects1006server.database.windows.net';
-$databaseName = 'Projectdb';
-$databaseUsername = 'Project1006';
-$databasePassword = 'anjana@123';
-
-// PHP Data Objects(PDO) Sample Code:
+ // PHP Data Objects(PDO) Sample Code:
 try {
-	// http://php.net/manual/en/pdo.connections.php
-	$dbConn = new PDO("mysql:host={$databaseHost};dbname={$databaseName}", $databaseUsername, $databasePassword);
-	
-	$dbConn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Setting Error Mode as Exception
-	// More on setAttribute: http://php.net/manual/en/pdo.setattribute.php
-} catch(PDOException $e) {
-	echo $e->getMessage();
+    $conn = new PDO("sqlsrv:server = tcp:demoimdwserver.database.windows.net,1433; Database = demoimdwdb", "ravdeepk", "{your_password_here}");
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
- 
+catch (PDOException $e) {
+    print("Error connecting to SQL Server.");
+    die(print_r($e));
+}
+
+// SQL Server Extension Sample Code:
+$connectionInfo = array("UID" => "ravdeepk@demoimdwserver", "pwd" => "{your_password_here}", "Database" => "demoimdwdb", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+$serverName = "tcp:demoimdwserver.database.windows.net,1433";
+$conn = sqlsrv_connect($serverName, $connectionInfo);
+
 ?>
