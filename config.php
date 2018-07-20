@@ -4,7 +4,7 @@
 try {
     $dbConn= new PDO("sqlsrv:server = tcp:demoimdwserver.database.windows.net,1433; Database = demoimdwdb", "ravdeepk", "Like@1234");
     $dbConn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
- echo $dbConn;
+ echo "Ravdeep";
 }
 catch (PDOException $e) {
     print("Error connecting to SQL Server.");
