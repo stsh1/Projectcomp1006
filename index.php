@@ -1,6 +1,5 @@
 <?php
 //including the database connection file
-echo "databasde conn";
 include_once("config.php");
 
 //fetching data in descending order (lastest entry first)
