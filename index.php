@@ -1,6 +1,19 @@
 <?php
 //including the database connection file
-include_once("config.php");
+//include_once("config.php");
+try {
+    $dbConn = new PDO("sqlsrv:server = tcp:finalprserver.database.windows.net,1433; Database = finalprdb", "ravdeep", "Like@1234");
+    $dbConn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (PDOException $e) {
+    print("Error connecting to SQL Server.");
+    die(print_r($e));
+}
+
+// SQL Server Extension Sample Code:
+$connectionInfo = array("UID" => "ravdeep@finalprserver", "pwd" => "Like@1234", "Database" => "finalprdb", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+$serverName = "tcp:finalprserver.database.windows.net,1433";
+$dbConn = sqlsrv_connect($serverName, $connectionInfo);
 
 //fetching data in descending order (lastest entry first)
 $result = $dbConn->query("SELECT * FROM users ORDER BY id DESC");
