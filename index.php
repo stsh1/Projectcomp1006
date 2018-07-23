@@ -3,9 +3,8 @@
 include_once("config.php");
 
 //fetching data in descending order (lastest entry first)
-//$result = $dbConn->query("SELECT * FROM users ORDER BY id DESC");
+$result = $dbConn->query("SELECT * FROM users ORDER BY id DESC");
 
-//echo $dbConn;
 ?>
 
 <html>
@@ -25,13 +24,13 @@ include_once("config.php");
 		<td>Update</td>
 	</tr>
 	<?php 	
-	/*while($row = $result->fetch(PDO::FETCH_ASSOC)) { 		
+	while($row = $result->fetch(PDO::FETCH_ASSOC)) { 		
 		echo "<tr>";
 		echo "<td>".$row['name']."</td>";
 		echo "<td>".$row['age']."</td>";
 		echo "<td>".$row['email']."</td>";	
 		echo "<td><a href=\"edit.php?id=$row[id]\">Edit</a> | <a href=\"delete.php?id=$row[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";		
-	}*/
+	}
 	?>
 	</table>
 </body>
