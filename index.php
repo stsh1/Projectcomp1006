@@ -23,7 +23,7 @@ $result = $dbConn->query("SELECT * FROM users ORDER BY id DESC");
 		<td>Update</td>
 	</tr>
 	<?php 	
-	while($row = $result->fetch(PDO::FETCH_ASSOC)) { 		
+	while($row = mysql_fetch_array($result)) { 		
 		echo "<tr>";
 		echo "<td>".$row['name']."</td>";
 		echo "<td>".$row['age']."</td>";
