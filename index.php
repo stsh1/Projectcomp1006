@@ -4,7 +4,8 @@ include_once("config.php");
 
 //fetching data in descending order (lastest entry first)
 $result = $dbConn->query("SELECT * FROM users ORDER BY id DESC");
-echo $result;
+echo "databasde conn";
+echo $dbConn;
 ?>
 
 <html>
