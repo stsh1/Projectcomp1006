@@ -1,10 +1,11 @@
 <?php
 //including the database connection file
+echo "databasde conn";
 include_once("config.php");
 
 //fetching data in descending order (lastest entry first)
 $result = $dbConn->query("SELECT * FROM users ORDER BY id DESC");
-echo "databasde conn";
+
 echo $dbConn;
 ?>
 
