@@ -51,8 +51,7 @@
 /*$conn=mysql_connect("localhost","root","");
 $db= mysql_select_db("students",$conn);*/
 
-$conn=mysqli_connect("localhost","root","");
-$db=mysqli_select_db($conn,"students");
+include('config.php');
  
  if (isset($_POST['submit']))
  {
@@ -90,11 +89,11 @@ if($student_roll=='')
 
 $que="insert into u_reg (user_name,father_name,school_name,roll_no,class)values('$student_name','$student_father','$student_school','$student_roll','$student_class');";
 
-if($conn->query($que)=== true)
-{
+//if($conn->query($que)=== true)
+//{
 	echo "<center><b>The follwing Data has been inserted into our databse:</b></center>";
 	echo "<table width='500px'align='center' border='4'><tr><td>$student_name</td><td>$student_father</td><td>$student_school</td><td>$student_roll</td><td>$student_class</td></tr></table>";                      
-}
+//}
 
 
 }
