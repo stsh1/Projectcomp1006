@@ -1,5 +1,6 @@
 <?php
 include_once("config.php");
+echo "ravdeep";
 echo $conn;
 //fetching data in descending order (lastest entry first)
 $result = $conn->query("SELECT * FROM users ORDER BY id DESC");
