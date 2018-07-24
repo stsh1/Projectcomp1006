@@ -14,7 +14,7 @@ $connectionInfo = array("UID" => "ravdeep@finalprserver", "pwd" => "Like@1234", 
 $serverName = "tcp:finalprserver.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 
-$q="Select * from u_reg";
+$q="Select * from dbo.users";
 $run=mysqli_query($conn, $q);
 	 
 				
