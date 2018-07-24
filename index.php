@@ -1,31 +1,25 @@
 <?php
-// PHP Data Objects(PDO) Sample Code:
-try {
-    $conn = new PDO("sqlsrv:server = tcp:finalprserver.database.windows.net,1433; Database = finalprdbb", "ravdeep", "Like@1234");
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch (PDOException $e) {
-    print("Error connecting to SQL Server.");
-    die(print_r($e));
-}
+$serverName = "finalprserver.database.windows.net";
+$connectionOptions = array(
+    "Database" => "finalprdbb",
+    "Uid" => "ravdeep",
+    "PWD" => "Like@1234"
+);
+//Establishes the connection
+$conn = sqlsrv_connect($serverName, $connectionOptions);
 
-// SQL Server Extension Sample Code:
-$connectionInfo = array("UID" => "ravdeep@finalprserver", "pwd" => "Like@1234", "Database" => "finalprdbb", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
-$serverName = "tcp:finalprserver.database.windows.net,1433";
-$conn = sqlsrv_connect($serverName, $connectionInfo);
+$tsql= "SELECT TOP 20 pc.Name as CategoryName, p.name as ProductName
+        FROM [SalesLT].[ProductCategory] pc
+        JOIN [SalesLT].[Product] p
+     ON pc.productcategoryid = p.productcategoryid";
+$tsql="SELECT * FROM dbo.users";
 
-$q="Select * from dbo.users";
-$run=mysqli_query($conn, $q);
-	 
-				
-			
-				while ($row=mysqli_fetch_array($run)){
-					$id = $row[0];
-					$name = $row[1];
-					$fname=$row[2];
-				}
-echo $row;
-echo $id;
-echo $name;
-echo $fname;
+$getResults= sqlsrv_query($conn, $tsql);
+echo ("Reading data from table" . PHP_EOL);
+if ($getResults == FALSE)
+    echo (sqlsrv_errors());
+while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
+ echo ($row['id'] . " " . $row['name'] . PHP_EOL);
+}
+sqlsrv_free_stmt($getResults);
 ?>
