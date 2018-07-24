@@ -1,6 +1,5 @@
 <?php
-	$conn = mysql_connect("localhost","root","");
-	$db = mysql_select_db('students',$conn);
+	include('config.php');
 	
 	$edit_record=$_GET['edit'];
 	$query="select * from u_reg where u_id ='$edit_record' ";
