@@ -40,8 +40,10 @@ if(!$_SESSION['admin_name']){
 				//include('config.php');
 				$conn=mysql_connect(" tcp:finalprserver.database.windows.net","ravdeep","Like@1234");
 				$que = "select * from u_reg";
+		             
 				//$run =mysql_query($que);
 		                $run=mysqli_query($conn, $que);
+		echo $run;
 				$i=1;
 				while ($row=mysql_fetch_array($run)){
 					$u_id = $row[0];
