@@ -88,7 +88,7 @@ if($student_roll=='')
  }
 
 $que="insert into u_reg (name,fname,school,rollno,class)values('$student_name','$student_father','$student_school','$student_roll','$student_class');";
-
+mysqli_query($conn, $que);
 //if($conn->query($que)=== true)
 //{
 	echo "<center><b>The follwing Data has been inserted into our databse:</b></center>";
