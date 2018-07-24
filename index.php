@@ -8,10 +8,7 @@ $connectionOptions = array(
 //Establishes the connection
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 
-$tsql= "SELECT TOP 20 pc.Name as CategoryName, p.name as ProductName
-        FROM [SalesLT].[ProductCategory] pc
-        JOIN [SalesLT].[Product] p
-     ON pc.productcategoryid = p.productcategoryid";
+
 $tsql="SELECT * FROM dbo.users";
 
 $getResults= sqlsrv_query($conn, $tsql);
