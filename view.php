@@ -6,9 +6,6 @@ if(!$_SESSION['admin_name']){
 }
 */
 ?>
-<?php
-include('config.php');
-?>
 <html>
 	<head><title>Viewing the Record</title>
 	<link rel="stylesheet" href="style.css">
@@ -37,8 +34,10 @@ include('config.php');
 	
 			<?php
 				
-				$conn=mysql_connect("localhost","root","");
-				$db=mysql_select_db("students",$conn);
+				/*$conn=mysql_connect("localhost","root","");
+				$db=mysql_select_db("students",$conn);*/
+				
+				include('config.php');
 				
 				$que = "select * from u_reg order by 1 DESC";
 				$run =mysql_query($que);
@@ -68,9 +67,6 @@ include('config.php');
 </html>
 
 <?php
-	
-	include('config.php');
-		
 	if( isset($_GET['detail']))
 	{
 	$detail_record=$_GET['detail'];
