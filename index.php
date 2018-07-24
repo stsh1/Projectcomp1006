@@ -10,6 +10,7 @@ $run=mysqli_query($conn, $q);
 					$name = $row[1];
 					$fname=$row[2];
 				}
+echo $row;
 echo $id;
 echo $name;
 echo $fname;
