@@ -5,7 +5,7 @@ echo "ravdeep";
 //fetching data in descending order (lastest entry first)
 $result = $conn->query("SELECT * FROM users ORDER BY id DESC");
 $value=$result->fetch(PDO::FETCH_ASSOC);
-echo $value[name];
+echo $value['name'];
 ?>
 
 <html>
