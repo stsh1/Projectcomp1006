@@ -6,6 +6,9 @@ if(!$_SESSION['admin_name']){
 }
 */
 ?>
+<?php
+include('config.php');
+?>
 <html>
 	<head><title>Viewing the Record</title>
 	<link rel="stylesheet" href="style.css">
