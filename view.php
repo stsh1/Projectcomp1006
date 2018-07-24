@@ -39,7 +39,7 @@ if(!$_SESSION['admin_name']){
 				
 				//include('config.php');
 				$conn=mysql_connect(" tcp:finalprserver.database.windows.net","ravdeep","Like@1234");
-				$que = "select * from u_reg order by 1 DESC";
+				$que = "select * from u_reg";
 				//$run =mysql_query($que);
 		                $run=mysqli_query($conn, $que);
 				$i=1;
@@ -68,10 +68,10 @@ if(!$_SESSION['admin_name']){
 </html>
 
 <?php
-/*	if( isset($_GET['detail']))
+	if( isset($_GET['detail']))
 	{
 	$detail_record=$_GET['detail'];
-	$que1="select * from u_reg where u_id='$detail_record'";
+	$que1="select * from u_reg where id='$detail_record'";
 	$run1 = mysql_query($que1);
 	
 	while ($row1=mysql_fetch_array($run1))
@@ -82,7 +82,7 @@ if(!$_SESSION['admin_name']){
 		$roll= $row1[4];
 		$class= $row1[5];
 	
-?>*/
+?>
 <br><br>
 <table border="4" align="center" width='1000'>
 	<tr>
