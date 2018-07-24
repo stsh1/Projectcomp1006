@@ -51,7 +51,8 @@
 /*$conn=mysql_connect("localhost","root","");
 $db= mysql_select_db("students",$conn);*/
 
-include('config.php');
+$conn=mysql_connect(" tcp:finalprserver.database.windows.net","ravdeep","Like@1234");
+				
  
  if (isset($_POST['submit']))
  {
