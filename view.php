@@ -37,10 +37,11 @@ if(!$_SESSION['admin_name']){
 				/*$conn=mysql_connect("localhost","root","");
 				$db=mysql_select_db("students",$conn);*/
 				
-				include('config.php');
-				
+				//include('config.php');
+				$conn=mysql_connect(" tcp:finalprserver.database.windows.net","ravdeep","Like@1234");
 				$que = "select * from u_reg order by 1 DESC";
-				$run =mysql_query($que);
+				//$run =mysql_query($que);
+		                $run=mysqli_query($conn, $que);
 				$i=1;
 				while ($row=mysql_fetch_array($run)){
 					$u_id = $row[0];
@@ -67,7 +68,7 @@ if(!$_SESSION['admin_name']){
 </html>
 
 <?php
-	if( isset($_GET['detail']))
+/*	if( isset($_GET['detail']))
 	{
 	$detail_record=$_GET['detail'];
 	$que1="select * from u_reg where u_id='$detail_record'";
@@ -81,7 +82,7 @@ if(!$_SESSION['admin_name']){
 		$roll= $row1[4];
 		$class= $row1[5];
 	
-?>
+?>*/
 <br><br>
 <table border="4" align="center" width='1000'>
 	<tr>
