@@ -65,6 +65,9 @@ if(!$_SESSION['admin_name']){
 </html>
 
 <?php
+	
+	include('config.php');
+		
 	if( isset($_GET['detail']))
 	{
 	$detail_record=$_GET['detail'];
