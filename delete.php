@@ -1,6 +1,5 @@
 <?php
-$conn = mysql_connect("localhost","root","");
-$db = mysql_select_db("students",$conn);
+include('config.php');
 
 $delete_record = $_GET['del'];
 
