@@ -2,7 +2,7 @@
 include_once("config.php");
 
 //fetching data in descending order (lastest entry first)
-$result = $dbConn->query("SELECT * FROM dbo.users ORDER BY id DESC");
+$result = $conn->query("SELECT * FROM users ORDER BY id DESC");
 ?>
 
 <html>
